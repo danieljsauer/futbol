@@ -1,8 +1,9 @@
 require 'simplecov'
 SimpleCov.start
 
-require_relative './season'
-require_relative './game'
-require_relative './league'
-require_relative './csv_method'
-require_relative './stat_tracker'
+require 'csv'
+require './lib/season'
+require './lib/game'
+require './lib/league'
+require './lib/futbol'
+require './lib/stat_tracker'
