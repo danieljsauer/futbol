@@ -8,7 +8,7 @@ RSpec.describe StatTracker do
     locations = {
                 games: game_path,
                 teams: team_path,
-                game_teams: game_teams
+                game_teams: game_teams_path
                 }
     @stat_tracker = StatTracker.new(locations)
   end
