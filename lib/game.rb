@@ -2,7 +2,7 @@
 # We will need game_id, season, away_team_id, home_team_id, away_goals, 
 # home_goals.
 class Game
-  attr_reader :game_id,
+  attr_accessor :game_id,
               :season,
               :away_team_id,
               :home_team_id,
@@ -19,7 +19,7 @@ class Game
     @home_team_id = data[:home_team_id]
     @away_goals = data[:away_goals]
     @home_goals = data[:home_goals]
-    @home_team_name = data[:team_name]
-    @away_team_name = data[:team_name]
+    @home_team_name = nil
+    @away_team_name = nil
   end
 end

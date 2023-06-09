@@ -6,6 +6,6 @@ class League
 
   def initialize(data)
     @team_id = data[:team_id]
-    @team_name = data[:team_name]
+    @team_name = data[:teamname]
   end
 end
