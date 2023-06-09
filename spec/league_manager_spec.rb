@@ -11,7 +11,7 @@ RSpec.describe LeagueManager do
                 game_teams: game_teams_path
                 }
     stat_tracker = StatTracker.new(locations)
-    @league_manager = LeagueManager.new(game_path, stat_tracker)
+    @league_manager = LeagueManager.new(team_path, stat_tracker)
   end
 
   describe '#exists' do
