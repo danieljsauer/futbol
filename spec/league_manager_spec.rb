@@ -26,4 +26,11 @@ RSpec.describe LeagueManager do
       expect(@league_manager.count_of_teams).to eq(32)
     end
   end
+
+  describe '#best_offense' do
+    it 'can name the team with the highest average number of goals scored per game accross all seasons' do
+      expect(@league_manager.best_offense).to be_a(String)
+      expect(@league_manager.best_offense).to eq('Reign FC')
+    end
+  end
 end
