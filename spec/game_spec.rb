@@ -8,7 +8,9 @@ RSpec.describe Game do
                     away_team_id: '14',
                     home_team_id: '23',
                     away_goals: '0',
-                    home_goals: '3'
+                    home_goals: '3',
+                    home_team_name: 'Home Team',
+                    away_team_name: 'away'
                   )
   end
 
@@ -24,6 +26,8 @@ RSpec.describe Game do
       expect(@game.home_team_id).to eq('23')
       expect(@game.away_goals).to eq('0')
       expect(@game.home_goals).to eq('3')
+      expect(@game.home_team_name).to eq('Home Team')
+      expect(@game.away_team_name).to eq('away')
     end
   end
 end

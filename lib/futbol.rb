@@ -1,6 +1,7 @@
 class Futbol
-  attr_reader :games,
-              :league,
+  attr_accessor :games
+
+  attr_reader :league,
               :season
 
   def initialize(locations)
@@ -10,6 +11,7 @@ class Futbol
   end
 
   def access_game_and_game_teams
+    # require 'pry'; binding.pry
     @games.map! do |game|
       @season.each do |seas|
         if seas.game_id == game.game_id

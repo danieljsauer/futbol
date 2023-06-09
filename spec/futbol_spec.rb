@@ -30,5 +30,10 @@ locations = {
     end
   end
 
-  
+  describe '#access_game_and_game_teams' do
+    it 'can parse data from multiple csv files' do
+      # @futbol.access_game_and_game_teams
+      expect(@futbol.games[1].home_team_name).to eq('FC Dallas')
+    end
+  end
 end
