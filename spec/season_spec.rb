@@ -5,7 +5,7 @@ RSpec.describe Season do
     @season = Season.new(
                         game_id: '3',
                         team_id: '6',
-                        HoA: 'away',
+                        hoa: 'away',
                         result: 'WIN',
                         head_coach: 'John Tortorella',
                         goals: '2',
@@ -19,7 +19,7 @@ RSpec.describe Season do
       expect(@season).to be_a(Season)
       expect(@season.game_id).to eq('3')
       expect(@season.team_id).to eq('6')
-      expect(@season.HoA).to eq('away')
+      expect(@season.home_or_away).to eq('away')
       expect(@season.result).to eq('WIN')
       expect(@season.head_coach).to eq('John Tortorella')
       expect(@season.goals).to eq('2')

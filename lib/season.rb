@@ -3,7 +3,7 @@
 class Season
   attr_reader :game_id,
               :team_id,
-              :HoA,
+              :home_or_away,
               :result,
               :head_coach,
               :goals,
@@ -13,7 +13,7 @@ class Season
   def initialize(data)
     @game_id = data[:game_id]
     @team_id = data[:team_id]
-    @HoA = data[:HoA]
+    @home_or_away = data[:hoa] 
     @result = data[:result]
     @head_coach = data[:head_coach]
     @goals = data[:goals]
