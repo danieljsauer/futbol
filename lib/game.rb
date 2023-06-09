@@ -2,24 +2,23 @@
 # We will need game_id, season, away_team_id, home_team_id, away_goals, 
 # home_goals.
 class Game
-  attr_accessor :game_id,
-                :season,
-                :away_team_id,
-                :home_team_id,
-                :away_goals,
-                :home_goals,
-                :home_team_name,
-                :away_team_name
+  attr_reader :game_id,
+              :season,
+              :away_team_id,
+              :home_team_id,
+              :away_goals,
+              :home_goals
   
-
   def initialize(data)
     @game_id = data[:game_id]
     @season = data[:season]
     @away_team_id = data[:away_team_id]
     @home_team_id = data[:home_team_id]
-    @away_goals = data[:away_goals]
-    @home_goals = data[:home_goals]
-    @home_team_name = data[:home_team_name]
-    @away_team_name = data[:away_team_name]
+    @away_goals = data[:away_goals].to_i
+    @home_goals = data[:home_goals].to_i
+  end
+
+  def total_score
+    @home_goals + @away_goals
   end
 end
