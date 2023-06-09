@@ -17,6 +17,8 @@ Starter repository for the [Turing School](https://turing.io/) Futbol project.
  4. We used the Single Responsility Principle to organize classes in ways that fit the categories outline in the "code design" section within Iteration 1.  This has also been a topic of discussion in our standups.
 
  5. Version 1; June 6, 2023 - Link to DTR: [DTR](https://docs.google.com/document/d/1QJzGBqYr5ZQeYflURWxWUMHsYsYMmuKSTIbFc-q187o/edit)
+   - Discussion on how we would handle conflicts added June 7, 2023
+   - Added DTR review on June 8, 2023
 
  ## Contributors
 

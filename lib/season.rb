@@ -15,7 +15,7 @@ class Season
     @team_id = data[:team_id]
     @HoA = data[:HoA]
     @result = data[:result]
-    @head_coach = data[:head]
+    @head_coach = data[:head_coach]
     @goals = data[:goals]
     @shots = data[:shots]
     @tackles = data[:tackles]
