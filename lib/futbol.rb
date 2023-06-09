@@ -28,5 +28,19 @@ class Futbol
     end
   end
 
+  def access_league_and_game_and_game_teams
+    @games.map! do |game|
+      @league.each do |leag|
+        if leag.team_id == game.home_team_id
+          game.home_team_id = leag.team_id
+          game.home_team_name = leag.team_name
+        elsif leag.team_id == game.away_team_id
+          game.away_team_id = leag.team_id
+          game.away_team_name = leag.team_name
+        end
+      end
+      game
+    end
+  end
 end
 
