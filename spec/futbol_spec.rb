@@ -13,6 +13,9 @@ locations = {
           }
 
     @futbol = Futbol.new(locations)
+    @futbol.access_game_and_game_teams
+    @futbol.access_league_and_game_and_game_teams
+    # require 'pry'; binding.pry
   end
 
   describe '#initialize' do
@@ -26,4 +29,6 @@ locations = {
       expect(@futbol.season[1]).to be_a(Season)
     end
   end
+
+  
 end
