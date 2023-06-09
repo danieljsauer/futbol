@@ -3,13 +3,13 @@
 # home_goals.
 class Game
   attr_accessor :game_id,
-              :season,
-              :away_team_id,
-              :home_team_id,
-              :away_goals,
-              :home_goals,
-              :home_team_name,
-              :away_team_name
+                :season,
+                :away_team_id,
+                :home_team_id,
+                :away_goals,
+                :home_goals,
+                :home_team_name,
+                :away_team_name
   
 
   def initialize(data)
@@ -19,7 +19,7 @@ class Game
     @home_team_id = data[:home_team_id]
     @away_goals = data[:away_goals]
     @home_goals = data[:home_goals]
-    @home_team_name = nil
-    @away_team_name = nil
+    @home_team_name = data[:home_team_name]
+    @away_team_name = data[:away_team_name]
   end
 end

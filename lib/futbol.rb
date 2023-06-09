@@ -11,7 +11,6 @@ class Futbol
   end
 
   def access_game_and_game_teams
-    # require 'pry'; binding.pry
     @games.map! do |game|
       @season.each do |seas|
         if seas.game_id == game.game_id
