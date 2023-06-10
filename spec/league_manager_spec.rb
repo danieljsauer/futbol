@@ -11,7 +11,8 @@ RSpec.describe LeagueManager do
                 game_teams: game_teams_path
                 }
     stat_tracker = StatTracker.new(locations)
-    @league_manager = LeagueManager.new(team_path, stat_tracker)
+    game_manager = GameManager.new(game_path, stat_tracker)
+    @league_manager = LeagueManager.new(team_path, stat_tracker, game_manager.games)
   end
 
   describe '#exists' do
@@ -30,7 +31,7 @@ RSpec.describe LeagueManager do
   describe '#best_offense' do
     it 'can name the team with the highest average number of goals scored per game accross all seasons' do
       expect(@league_manager.best_offense).to be_a(String)
-      expect(@league_manager.best_offense).to eq('Reign FC')
+      expect(@league_manager.best_offense).to eq("New York Red Bulls")
     end
   end
 end
