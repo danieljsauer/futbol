@@ -11,8 +11,7 @@ RSpec.describe LeagueManager do
                 game_teams: game_teams_path
                 }
     stat_tracker = StatTracker.new(locations)
-    game_manager = GameManager.new(game_path, stat_tracker)
-    @league_manager = LeagueManager.new(team_path, stat_tracker, game_manager.games)
+    @league_manager = LeagueManager.new(team_path, stat_tracker)
   end
 
   describe '#exists' do
@@ -39,6 +38,20 @@ RSpec.describe LeagueManager do
     it 'can name the team with the lowest average number of goals scored per game accross all seasons' do
       expect(@league_manager.worst_offense).to be_a(String)
       expect(@league_manager.worst_offense).to eq("FC Cincinnati")
+    end
+  end
+
+  describe '#most_wins_team_id' do
+    it 'can track the most wins by id' do
+      expect(@league_manager.most_wins_team_id).to be_a(Integer)
+      expect(@league_manager.most_wins_team_id).to eq(8)
+    end
+  end
+
+  describe '#most_losses_team_id' do
+    it 'can track the most losses by id' do
+      expect(@league_manager.most_losses_team_id).to be_a(Integer)
+      expect(@league_manager.most_losses_team_id).to eq(26)
     end
   end
 end
