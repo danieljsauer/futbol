@@ -52,10 +52,23 @@ RSpec.describe GameManager do
     end
   end
 
+  describe '#count_of_games_by_season' do
+    it 'should return the number of games per season' do
+      expected = {"20122013"=>29}
+      expect(@game_manager.count_of_games_by_season).to be_a(Hash)
+    end
+  end
+
   describe '#average_goals_per_game' do
     it 'can give the average goals per game for the season' do
       expected = {6=>2.0, 3=>1.6, 5=>2.0, 16=>2.0, 17=>1.57, 8=>2.6, 9=>2.0, 30=>1.6, 19=>2.0, 26=>0.33}
       expect(@game_manager.average_goals_per_game).to eq(expected)
+    end
+  end
+
+  describe '#average_goals_by_season' do
+    it 'can return the average goals scored per season in a hash' do
+      expect(@game_manager.average_goals_by_season("20122013")).to eq( {"20122013"=>3.69} )
     end
   end
   
@@ -96,6 +109,24 @@ RSpec.describe GameManager do
   describe '#games_played' do
     it 'can tell you the total number of games played per team_id' do
       expect(@game_manager.games_played(3)).to eq(5)
+    end
+  end
+
+  describe '#total_goals_by_season(season)' do
+    it 'can tell you the total number of goals per season' do
+      expect(@game_manager.total_goals_by_season('20122013')).to eq(107)
+    end
+  end
+
+  describe '#total_games_per_season(season)' do
+    it 'returns the total number of games per season' do
+      expect(@game_manager.total_games_per_season('20122013')).to eq(29)
+    end
+  end
+
+  describe '#average_scores_by_season(seaon)' do
+    it 'returns the average number of goals per season' do
+      expect(@game_manager.average_scores_by_season('20122013')).to eq(3.69)
     end
   end
 end
