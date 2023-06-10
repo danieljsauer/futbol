@@ -13,9 +13,6 @@ locations = {
           }
 
     @futbol = Futbol.new(locations)
-    @futbol.access_game_and_game_teams
-    @futbol.access_league_and_game_and_game_teams
-    # require 'pry'; binding.pry
   end
 
   describe '#initialize' do
@@ -32,7 +29,8 @@ locations = {
 
   describe '#access_game_and_game_teams' do
     it 'can parse data from multiple csv files' do
-      # @futbol.access_game_and_game_teams
+      @futbol.access_game_and_game_teams
+      @futbol.access_league_and_game_and_game_teams
       expect(@futbol.games[1].home_team_name).to eq('FC Dallas')
     end
   end

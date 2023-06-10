@@ -4,7 +4,7 @@ RSpec.describe League do
   before(:each) do
     @league = League.new(
                         team_id: '8',
-                        team_name: 'AFC Richmond'
+                        teamname:'AFC Richmond'
                         )
   end
 
