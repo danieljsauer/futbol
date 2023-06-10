@@ -5,7 +5,7 @@ class League
               :team_name
 
   def initialize(data)
-    @team_id = data[:team_id]
+    @team_id = data[:team_id].to_i 
     @team_name = data[:teamname]
   end
 end
