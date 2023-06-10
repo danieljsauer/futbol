@@ -15,7 +15,6 @@ class StatTracker
 
   def create_managers(locations)
     @game_manager = GameManager.new(locations[:games], self)
-    
   end
 
   # Game Manager Methods
@@ -28,12 +27,33 @@ class StatTracker
     @game_manager.lowest_total_score
   end
 
+  def total_games_per_team
+    @game_manager.total_games_per_team
+  end
+
+  def total_scores_per_team
+    @game_manager.total_games_per_team
+  end
+
+  def games_played(team_id)
+    @game_manager.games_played(team_id)
+  end
+
+  def average_goals_per_game
+    @game_manager.average_goals_per_game
+  end
+
   # League Manager Methods
+  
   def count_of_teams
     @league_manager.count_of_teams
   end
 
   def best_offense
     @league_manager.best_offense
+  end
+
+  def worst_offense
+    @league_manager.worst_offense
   end
 end
