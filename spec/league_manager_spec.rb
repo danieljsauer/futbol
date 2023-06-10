@@ -34,4 +34,11 @@ RSpec.describe LeagueManager do
       expect(@league_manager.best_offense).to eq("New York Red Bulls")
     end
   end
+
+  describe '#worst_offense' do
+    it 'can name the team with the lowest average number of goals scored per game accross all seasons' do
+      expect(@league_manager.worst_offense).to be_a(String)
+      expect(@league_manager.worst_offense).to eq("FC Cincinnati")
+    end
+  end
 end
