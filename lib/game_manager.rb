@@ -1,5 +1,6 @@
 class GameManager 
-  attr_reader :game_path,
+  attr_reader :games,
+              :game_path,
               :stat_tracker
 
   def initialize(game_path, stat_tracker)
@@ -13,7 +14,7 @@ class GameManager
     @games = data.map do |game|
       Game.new(game)
     end
-  end
+  enda
 
   def highest_total_score
     @games.max_by do |game|
