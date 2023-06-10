@@ -14,7 +14,7 @@ class GameManager
     @games = data.map do |game|
       Game.new(game)
     end
-  enda
+  end
 
   def highest_total_score
     @games.max_by do |game|
