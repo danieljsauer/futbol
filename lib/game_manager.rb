@@ -40,6 +40,15 @@ class GameManager
     (game_ties / total_games).round(2)
   end
 
+  def count_of_games_by_season
+    game_count = Hash.new(0)
+    @games.map do |game|
+      game_count[game.season] += 1
+    end
+    game_count
+  end
+  
+
   def average_goals_per_game
     hash = Hash.new
     total_scores_per_team.each do |team_id, goals|
@@ -48,6 +57,15 @@ class GameManager
     hash
   end
 
+ 
+
+  def average_goals_by_season(season)
+    avg_goals = Hash.new(0)
+    @games.each do |game|
+      avg_goals[game.season] = average_scores_by_season(season)
+    end
+    avg_goals
+  end
 
 # -------Helper Methods-------
 
@@ -89,5 +107,25 @@ class GameManager
 
   def games_played(team_id)
     total_games_per_team[team_id]
+  end
+
+  def total_goals_by_season(season)
+    @games.sum do |game|
+      if game.season == season
+        game.home_goals + game.away_goals
+      end
+    end
+  end
+
+  def total_games_per_season(season)
+    @games.count do |game|
+      if game.season == season
+        game.game_id
+      end
+    end
+  end
+
+  def average_scores_by_season(season)
+    (total_goals_by_season(season).to_f / total_games_per_season(season)).round(2)
   end
 end
