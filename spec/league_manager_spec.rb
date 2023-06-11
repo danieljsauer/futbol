@@ -62,6 +62,13 @@ RSpec.describe LeagueManager do
     end
   end
 
+  describe '#lowest_scoring_home_team' do
+    it 'can name of the team with the lowest average score per game across all seasons when they are at home' do
+      expect(@league_manager.lowest_scoring_home_team).to be_a(String)
+      expect(@league_manager.lowest_scoring_home_team).to eq("")
+    end
+  end
+
  # helper methods
   describe '#most_wins_team_id' do
     it 'can track the most wins by id' do
