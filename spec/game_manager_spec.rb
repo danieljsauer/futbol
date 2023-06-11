@@ -86,6 +86,12 @@ RSpec.describe GameManager do
     end
   end
 
+  describe '#visitor_wins' do
+    it 'returns a count of the total number of away team wins' do
+      expect(@game_manager.visitor_wins).to eq(7.0)
+    end
+  end
+
   describe '#game_ties' do
     it 'retruns a count of the total number of ties' do
       expect(@game_manager.game_ties).to eq(1.0)
