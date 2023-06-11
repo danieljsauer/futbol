@@ -24,10 +24,3 @@ end
 
 
 #----Helper Methods----
-
-def coach_wins_(season)
-  # I need to return the name of the coach with the best win percentage per season.
-  # I need to iterate of each season find the team with the best win percentage.
-  # then call on that coach.
-  require 'pry'; binding.pry
-end
