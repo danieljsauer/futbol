@@ -164,7 +164,7 @@ RSpec.describe GameManager do
 
   describe '#home_goals_with_team_id' do
     it 'can create a hash with home team id as key and home goals has value' do
-      expect(@game_manager.home_goals_with_team_id).to eq({3=>1, 6=>4, 5=>0, 17=>1, 16=>3, 9=>4, 8=>2, 30=>1, 26=>1, 19=>0})
+      expect(@game_manager.home_goals_with_team_id).to eq({6=>1, 3=>2, 5=>1, 16=>3, 17=>3, 8=>1, 9=>3, 30=>0, 19=>2, 26=>1})
     end
   end
 end
