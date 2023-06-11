@@ -15,6 +15,8 @@ class StatTracker
 
   def create_managers(locations)
     @game_manager = GameManager.new(locations[:games], self)
+    @league_manager = LeagueManager.new(locations[:teams], self)
+    @season_manager = SeasonManager.new(locations[:game_teams], self)
   end
 
   # Game Manager Methods
@@ -109,5 +111,14 @@ class StatTracker
 
   def worst_offense
     @league_manager.worst_offense
+  end
+
+
+
+
+  # ----Season Manager Methods----
+
+  def best_coach(season)
+
   end
 end
