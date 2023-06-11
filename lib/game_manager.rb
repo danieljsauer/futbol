@@ -125,4 +125,10 @@ class GameManager
   def average_scores_by_season(season)
     (total_goals_by_season(season).to_f / total_games_per_season(season)).round(2)
   end
+
+  def away_team_id
+    @games.map do |game|
+      game.away_team_id
+    end
+  end
 end

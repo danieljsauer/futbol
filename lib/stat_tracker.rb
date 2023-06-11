@@ -97,6 +97,10 @@ class StatTracker
     @game_manager.average_scores_by_season
   end
 
+  def away_team_id
+    @game_manager.away_team_id
+  end
+  
   # League Manager Methods
   
   def count_of_teams
