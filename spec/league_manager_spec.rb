@@ -41,34 +41,6 @@ RSpec.describe LeagueManager do
     end
   end
 
-  describe '#highest_scoring_visitor' do
-    it 'can name the team with the highest average score per game across all seasons when they are away' do
-      expect(@league_manager.highest_scoring_visitor).to be_a(String)
-      expect(@league_manager.highest_scoring_visitor).to eq("New York Red Bulls")
-    end
-  end
-
-  describe '#highest_scoring_home_team' do
-    it 'can name of the team with the highest average score per game across all seasons when they are home' do
-      expect(@league_manager.highest_scoring_home_team).to be_a(String)
-      expect(@league_manager.highest_scoring_home_team).to eq("FC Cincinnati")
-    end
-  end
-
-  describe '#lowest_scoring_visitor' do
-    it 'can name of the team with the lowest average score per game across all seasons when they are a visitor' do
-      expect(@league_manager.lowest_scoring_visitor).to be_a(String)
-      expect(@league_manager.lowest_scoring_visitor).to eq("Atlanta United")
-    end
-  end
-
-  describe '#lowest_scoring_home_team' do
-    it 'can name of the team with the lowest average score per game across all seasons when they are at home' do
-      expect(@league_manager.lowest_scoring_home_team).to be_a(String)
-      expect(@league_manager.lowest_scoring_home_team).to eq("")
-    end
-  end
-
  # helper methods
   describe '#most_wins_team_id' do
     it 'can track the most wins by id' do

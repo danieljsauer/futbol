@@ -19,6 +19,9 @@ Starter repository for the [Turing School](https://turing.io/) Futbol project.
  5. Version 1; June 6, 2023 - Link to DTR: [DTR](https://docs.google.com/document/d/1QJzGBqYr5ZQeYflURWxWUMHsYsYMmuKSTIbFc-q187o/edit)
    - Discussion on how we would handle conflicts added June 7, 2023
    - Added DTR review on June 8, 2023
+   - Added conflict resolution piece to DTR on June 11, 2023
+
+ 6. RETRO Deliverable:  
 
  ## Contributors
 
