@@ -153,4 +153,12 @@ class GameManager
     end
     away_id_and_goals
   end
+
+  def home_goals_with_team_id
+    home_id_and_goals = Hash.new
+    @games.map do |game|
+      home_id_and_goals[game.home_team_id] = game.home_goals
+    end
+    home_id_and_goals
+  end
 end
