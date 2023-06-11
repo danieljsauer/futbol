@@ -31,6 +31,10 @@ class LeagueManager
     return best_offense if @stat_tracker.away_team_id
   end
 
+  def highest_scoring_home_team
+    return worst_offense if @stat_tracker.home_team_id
+  end
+  
   # helper methods
   def most_wins_team_id
     @stat_tracker.average_goals_per_game.max_by { |id, goals| goals }[0]
