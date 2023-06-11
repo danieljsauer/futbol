@@ -28,8 +28,7 @@ class LeagueManager
   end
 
   def highest_scoring_visitor
-    # this is the same as best_offense but only looks at away_team_id
-    
+    return best_offense if @stat_tracker.away_team_id
   end
 
   # helper methods
