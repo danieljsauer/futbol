@@ -128,6 +128,11 @@ class StatTracker
     @league_manager.lowest_scoring_visitor
   end
 
+  def lowest_scoring_home_team
+    @league_manager.lowest_scoring_home_team
+  end
+
+  # helper methods
   def find_team_id_with_name
     @league_manager.find_team_name
   end
