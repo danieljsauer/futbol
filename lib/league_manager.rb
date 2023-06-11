@@ -27,6 +27,11 @@ class LeagueManager
     @league.find { |team| team.team_id == most_losses_team_id }.team_name
   end
 
+  def highest_scoring_visitor
+    # this is the same as best_offense but only looks at away_team_id
+    
+  end
+
   # helper methods
   def most_wins_team_id
     @stat_tracker.average_goals_per_game.max_by { |id, goals| goals }[0]
