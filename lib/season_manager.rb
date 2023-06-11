@@ -1,5 +1,6 @@
 class SeasonManager
-  attr_reader :season_path,
+  attr_reader :seasons,
+              :season_path,
               :stat_tracker
 
   def initialize(season_path, stat_tracker)
@@ -15,5 +16,7 @@ class SeasonManager
     end
   end
 
-  
+  def best_coach
+    
+  end
 end
