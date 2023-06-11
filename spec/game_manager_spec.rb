@@ -124,9 +124,29 @@ RSpec.describe GameManager do
     end
   end
 
-  describe '#average_scores_by_season(seaon)' do
+  describe '#average_scores_by_season(season)' do
     it 'returns the average number of goals per season' do
       expect(@game_manager.average_scores_by_season('20122013')).to eq(3.69)
+    end
+  end
+
+  # helper methods
+
+  describe '#away_team_id' do
+    it 'can find away team id' do
+      expect(@game_manager.away_team_id.first).to eq(3)
+    end
+  end
+
+  describe '#home_team_id' do
+    it 'can find home team id' do
+      expect(@game_manager.home_team_id.first).to eq(6)
+    end
+  end
+
+  describe '#average_scores_by_team' do
+    it 'can tell the average score per team' do
+      expect(@game_manager.average_scores_by_team).to eq({6=>1, 3=>3, 5=>3, 16=>1, 17=>2, 8=>2, 9=>2, 30=>3, 19=>4, 26=>29})
     end
   end
 end

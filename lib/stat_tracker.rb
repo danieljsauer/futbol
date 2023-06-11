@@ -97,17 +97,43 @@ class StatTracker
     @game_manager.average_scores_by_season
   end
 
+  def away_team_id
+    @game_manager.away_team_id
+  end
+
+  def home_team_id
+    @game_manager.home_team_id
+  end
+
+  def average_scores_by_team
+    @game_manager.average_scores_by_team
+  end
+
+  
   # League Manager Methods
   
   def count_of_teams
     @league_manager.count_of_teams
   end
-
+  
   def best_offense
     @league_manager.best_offense
   end
-
+  
   def worst_offense
     @league_manager.worst_offense
+  end
+  
+  def lowest_scoring_visitor
+    @league_manager.lowest_scoring_visitor
+  end
+
+  def lowest_scoring_home_team
+    @league_manager.lowest_scoring_home_team
+  end
+
+  # helper methods
+  def find_team_id_with_name
+    @league_manager.find_team_name
   end
 end

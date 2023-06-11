@@ -27,6 +27,24 @@ class LeagueManager
     @league.find { |team| team.team_id == most_losses_team_id }.team_name
   end
 
+  def highest_scoring_visitor
+    return best_offense if @stat_tracker.away_team_id
+  end
+
+  def highest_scoring_home_team
+    return worst_offense if @stat_tracker.home_team_id
+  end
+
+  def lowest_scoring_visitor
+    min_id = @stat_tracker.average_scores_by_team.values.min 
+    
+    find_team_id_with_name[min_id]
+  end
+
+  def lowest_scoring_home_team
+    # i need to return the lowest score if home_team_id == true
+  end
+
   # helper methods
   def most_wins_team_id
     @stat_tracker.average_goals_per_game.max_by { |id, goals| goals }[0]
@@ -34,5 +52,13 @@ class LeagueManager
 
   def most_losses_team_id
     @stat_tracker.average_goals_per_game.min_by { |id, goals| goals }[0]
+  end
+
+  def find_team_id_with_name
+    id_and_name = Hash.new
+    @league.each do |leag|
+      id_and_name[leag.team_id] = leag.team_name
+    end
+    id_and_name
   end
 end

@@ -125,4 +125,25 @@ class GameManager
   def average_scores_by_season(season)
     (total_goals_by_season(season).to_f / total_games_per_season(season)).round(2)
   end
+
+  # helper methods
+  def away_team_id
+    @games.map do |game|
+      game.away_team_id
+    end
+  end
+
+  def home_team_id
+    @games.map do |game|
+      game.home_team_id
+    end
+  end
+
+  def average_scores_by_team
+    average_by_team = Hash.new
+    total_scores_per_team.map do |team|
+      average_by_team[team[0]] = (total_games / team[1]) 
+    end
+    average_by_team
+  end
 end
