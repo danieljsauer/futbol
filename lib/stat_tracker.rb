@@ -100,7 +100,11 @@ class StatTracker
   def away_team_id
     @game_manager.away_team_id
   end
-  
+
+  def home_team_id
+    @game_manager.home_team_id
+  end
+
   # League Manager Methods
   
   def count_of_teams

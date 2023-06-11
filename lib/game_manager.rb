@@ -131,4 +131,10 @@ class GameManager
       game.away_team_id
     end
   end
+
+  def home_team_id
+    @games.map do |game|
+      game.home_team_id
+    end
+  end
 end
