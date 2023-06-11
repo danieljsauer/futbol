@@ -15,8 +15,4 @@ class SeasonManager
       Season.new(seas)
     end
   end
-
-  def best_coach
-    
-  end
 end
