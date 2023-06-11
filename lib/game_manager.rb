@@ -140,10 +140,10 @@ class GameManager
   end
 
   def average_scores_by_team
-    average_by_team = Hash.new
+    average_by_teams = Hash.new
     total_scores_per_team.map do |team|
-      average_by_team[team[0]] = (total_games / team[1]) 
+      average_by_teams[team[0]] = (total_games / team[1]) 
     end
-    average_by_team
+    average_by_teams
   end
 end
