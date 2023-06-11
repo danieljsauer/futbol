@@ -129,4 +129,10 @@ RSpec.describe GameManager do
       expect(@game_manager.average_scores_by_season('20122013')).to eq(3.69)
     end
   end
+
+  describe '#away_team_id' do
+    it 'can find away team id' do
+      expect(@game_manager.away_team_id.first).to eq(3)
+    end
+  end
 end
