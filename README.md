@@ -48,7 +48,7 @@ The biggest testement to the strong character of our group was the conflict reso
 
 Ultimately, our team stayed united and the final product was the result of a collaborative effort.
 
-2. Social Element - Our group made room for personal stories, jokes, and tangents. Since this project took so much time, this was imperative to our successful collaborition as it created an environment that was prodcutive but also fun. We spent a lot of time on zoom calls together and this made it an enjoyable work experience. 
+2. Social Element - Our group made room for personal stories, jokes, and tangents. Since this project took so much time, this was imperative to our successful collaboration as it created an environment that was productive but also fun. We spent a lot of time on zoom calls together and this made it an enjoyable work experience. 
 
 Also, since Turing is a huge chunk of our social interactions right now, it filled a crucial role in maintaining a positive state of mind. It was a pleasure getting to know one another.
 
