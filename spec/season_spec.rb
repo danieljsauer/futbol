@@ -27,4 +27,10 @@ RSpec.describe Season do
       expect(@season.tackles).to eq('44')
     end
   end
+
+  describe '#coach_wins(season)' do
+    it 'returns the number of wins a coach has in a season' do
+      expect(@season.coach_wins(season)).to be_a(Integer)
+    end
+  end
 end
