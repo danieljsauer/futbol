@@ -48,7 +48,6 @@ class GameManager
     game_count
   end
   
-
   def average_goals_per_game
     hash = Hash.new
     total_scores_per_team.each do |team_id, goals|
@@ -56,8 +55,6 @@ class GameManager
     end
     hash
   end
-
- 
 
   def average_goals_by_season(season)
     avg_goals = Hash.new(0)
