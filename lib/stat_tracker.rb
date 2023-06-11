@@ -4,17 +4,17 @@ class StatTracker
               :season
 
   def initialize(locations)
-    
     create_managers(locations)
   end
 
   def self.from_csv(locations)
     @stat_tracker = StatTracker.new(@locations)
-    
   end
 
   def create_managers(locations)
     @game_manager = GameManager.new(locations[:games], self)
+    @league_manager = LeagueManager.new(locations[:teams], self)
+    @season_manager = SeasonManager.new(locations[:game_teams], self)
   end
 
   # Game Manager Methods
@@ -109,31 +109,10 @@ class StatTracker
     @game_manager.average_scores_by_team
   end
 
-  
   # League Manager Methods
   
   def count_of_teams
     @league_manager.count_of_teams
   end
-  
-  def best_offense
-    @league_manager.best_offense
-  end
-  
-  def worst_offense
-    @league_manager.worst_offense
-  end
-  
-  def lowest_scoring_visitor
-    @league_manager.lowest_scoring_visitor
-  end
 
-  def lowest_scoring_home_team
-    @league_manager.lowest_scoring_home_team
-  end
-
-  # helper methods
-  def find_team_id_with_name
-    @league_manager.find_team_name
-  end
 end
