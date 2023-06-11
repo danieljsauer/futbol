@@ -16,9 +16,13 @@ RSpec.describe StatTracker do
   describe '#initialize' do
     it 'exists' do
       expect(@stat_tracker).to be_a(StatTracker)
-      expect(@stat_tracker.game).to be_a(GameManager)
-      expect(@stat_tracker.league).to be_a(LeagueManager)
-      expect(@stat_tracker.season).to be_a(SeasonManager)
+      expect(@stat_tracker.instance_variable_get(:@game_manager)).to be_a(GameManager)
+      expect(@stat_tracker.instance_variable_get(:@league_manager)).to be_a(LeagueManager)
+      expect(@stat_tracker.instance_variable_get(:@season_manager)).to be_a(SeasonManager)
     end
   end
 end
+
+
+
+
