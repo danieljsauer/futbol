@@ -155,4 +155,16 @@ RSpec.describe GameManager do
       expect(@game_manager.average_scores_by_team).to eq({6=>1, 3=>3, 5=>3, 16=>1, 17=>2, 8=>2, 9=>2, 30=>3, 19=>4, 26=>29})
     end
   end
+
+  describe '#away_goals_with_team_id' do
+    it 'can create a hash with away team id as key and away goals has value' do
+      expect(@game_manager.away_goals_with_team_id).to eq({3=>1, 6=>4, 5=>0, 17=>1, 16=>3, 9=>4, 8=>2, 30=>1, 26=>1, 19=>0})
+    end
+  end
+
+  describe '#home_goals_with_team_id' do
+    it 'can create a hash with home team id as key and home goals has value' do
+      expect(@game_manager.home_goals_with_team_id).to eq({3=>1, 6=>4, 5=>0, 17=>1, 16=>3, 9=>4, 8=>2, 30=>1, 26=>1, 19=>0})
+    end
+  end
 end
