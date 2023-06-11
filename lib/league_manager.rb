@@ -41,6 +41,10 @@ class LeagueManager
     find_team_id_with_name[min_id]
   end
 
+  def lowest_scoring_home_team
+    # i need to return the lowest score if home_team_id == true
+  end
+
   # helper methods
   def most_wins_team_id
     @stat_tracker.average_goals_per_game.max_by { |id, goals| goals }[0]
