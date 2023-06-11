@@ -48,6 +48,13 @@ RSpec.describe LeagueManager do
     end
   end
 
+  describe '#highest_scoring_home_team' do
+    it 'can name of the team with the highest average score per game across all seasons when they are home' do
+      expect(@league_manager.highest_scoring_home_team).to be_a(String)
+      expect(@league_manager.highest_scoring_home_team).to eq("FC Cincinnati")
+    end
+  end
+
  # helper methods
   describe '#most_wins_team_id' do
     it 'can track the most wins by id' do
