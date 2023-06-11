@@ -27,6 +27,52 @@ class StatTracker
     @game_manager.lowest_total_score
   end
 
+  def percentage_home_wins
+    @game_manager.percentage_home_wins
+  end
+
+  def percentage_visitor_wins
+    @game_manager.percentage_visitor_wins
+  end
+
+  def percentage_ties
+    @game_manager.percentage_ties
+  end
+
+  def count_of_games_by_season
+    @game_manager.count_of_games_by_season
+  end
+
+  def average_goals_per_game
+    @game_manager.average_goals_per_game
+  end
+
+  def average_goals_per_game
+    @game_manager.average_goals_per_game
+  end
+
+  def average_goals_by_season
+    @game_manager.average_goals_by_season
+  end
+
+  # ----Helper Methods----
+
+  def total_games
+    @game_manager.total_games
+  end
+
+  def home_wins
+    @game_manager.home_wins
+  end
+
+  def visitor_wins
+    @game_manager.visitor_wins
+  end
+
+  def game_ties
+    @game_manager.game_ties
+  end
+
   def total_games_per_team
     @game_manager.total_games_per_team
   end
@@ -39,8 +85,16 @@ class StatTracker
     @game_manager.games_played(team_id)
   end
 
-  def average_goals_per_game
-    @game_manager.average_goals_per_game
+  def total_goals_per_season
+    @game_manager.total_goals_per_season
+  end
+
+  def total_games_per_season
+    @game_manager.total_games_per_season
+  end
+
+  def average_scores_by_season
+    @game_manager.average_scores_by_season
   end
 
   # League Manager Methods
