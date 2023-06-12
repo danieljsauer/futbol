@@ -117,9 +117,43 @@ class StatTracker
     @game_manager.home_goals_with_team_id
   end
 
+  def visitor_average_total_scores
+    @game_manager.visitor_average_total_scores
+  end
+
   # League Manager Methods
-  
+
   def count_of_teams
     @league_manager.count_of_teams
+  end
+
+  def best_offense
+    @league_manager.best_offense
+  end
+
+  def worst_offense
+    @league_manager.worst_offense
+  end
+
+  def highest_scoring_visitor
+    @league_manager.highest_scoring_visitor
+  end
+
+  def lowest_scoring_visitor
+    @league_manager.lowest_scoring_visitor
+  end
+
+  # ----Helper Methods----
+  
+  def most_wins_team_id
+    @league_manager.most_wins_team_id
+  end
+
+  def most_losses_team_id
+    @league_manager.most_losses_team_id
+  end
+
+  def find_team_id_with_name
+    @league_manager.find_team_id_with_name
   end
 end
