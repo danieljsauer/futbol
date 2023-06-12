@@ -1,6 +1,6 @@
+require_relative './game'
 class GameManager 
   attr_reader :games,
-              :game_path,
               :stat_tracker
 
   def initialize(game_path, stat_tracker)
@@ -47,8 +47,23 @@ class GameManager
     end
     game_count
   end
-  
+
   def average_goals_per_game
+    (total_score / total_games).round(2)
+  end
+  
+  def average_goals_by_season
+    avg_goals = Hash.new(0)
+    @games.each do |game|
+      avg_goals[game.season] = average_scores_by_season(game.season)
+    end
+    avg_goals
+  end
+  
+  # -------Helper Methods-------
+  
+
+  def goals_per_game_by_team_id
     hash = Hash.new
     total_scores_per_team.each do |team_id, goals|
       hash[team_id] = (goals.to_f / games_played(team_id)).round(2)
@@ -56,16 +71,12 @@ class GameManager
     hash
   end
 
-  def average_goals_by_season(season)
-    avg_goals = Hash.new(0)
-    @games.each do |game|
-      avg_goals[game.season] = average_scores_by_season(season)
-    end
-    avg_goals
+  def total_score
+    @games.sum do |game|
+      game.total_score
+    end.to_f
   end
 
-  # -------Helper Methods-------
-  
   def total_games
     @games.count
   end
