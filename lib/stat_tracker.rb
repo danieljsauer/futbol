@@ -54,11 +54,19 @@ class StatTracker
   def average_goals_by_season
     @game_manager.average_goals_by_season
   end
-
+  
   # ----Helper Methods----
-
+  
   def total_games
     @game_manager.total_games
+  end
+  
+  def total_away_games(team_id)
+    @game_manager.total_away_games(team_id)
+  end
+
+  def total_home_games(team_id)
+    @game_manager.total_home_games
   end
 
   def home_wins
@@ -121,16 +129,8 @@ class StatTracker
     @game_manager.visitor_average_total_scores
   end
 
-  def total_away_games(team_id)
-    @game_manager.total_away_games(team_id)
-  end
-
   def home_average_total_scores
     @game_manager.home_average_total_scores
-  end
-
-  def total_home_games(team_id)
-    @game_manager.total_home_games
   end
 
   # League Manager Methods
@@ -151,8 +151,16 @@ class StatTracker
     @league_manager.highest_scoring_visitor
   end
 
+  def highest_scoring_home_team
+    @league_manager.highest_scoring_home_team
+  end
+
   def lowest_scoring_visitor
     @league_manager.lowest_scoring_visitor
+  end
+
+  def lowest_scoring_home_team
+    @league_manager.lowest_scoring_home_team
   end
 
   # ----Helper Methods----

@@ -47,7 +47,8 @@ class LeagueManager
     find_team_id_with_name[goals[0]]
   end
 
-  # helper methods
+ # -------Helper Methods-------
+ 
   def most_wins_team_id
     @stat_tracker.average_goals_per_game.max_by { |id, goals| goals }[0]
   end
