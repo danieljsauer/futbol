@@ -147,18 +147,26 @@ class GameManager
   end
 
   def away_goals_with_team_id
-    away_id_and_goals = Hash.new
+    away_id_and_goals = Hash.new(0.0)
     @games.map do |game|
-      away_id_and_goals[game.away_team_id] = game.away_goals
+      away_id_and_goals[game.away_team_id] += game.away_goals
     end
     away_id_and_goals
   end
 
   def home_goals_with_team_id
-    home_id_and_goals = Hash.new
+    home_id_and_goals = Hash.new(0.0)
     @games.map do |game|
-      home_id_and_goals[game.home_team_id] = game.home_goals
+      home_id_and_goals[game.home_team_id] += game.home_goals
     end
     home_id_and_goals
+  end
+
+  def visitor_average_total_scores
+    visitor_total_scores = Hash.new
+    away_goals_with_team_id.each do |team_id, goals|
+      visitor_total_scores[team_id] = (goals / total_games).round(2)
+    end
+    visitor_total_scores 
   end
 end
