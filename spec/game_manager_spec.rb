@@ -137,7 +137,6 @@ RSpec.describe GameManager do
   end
 
   # helper methods
-
   describe '#away_team_id' do
     it 'can find away team id' do
       expect(@game_manager.away_team_id.first).to eq(3)
@@ -158,13 +157,19 @@ RSpec.describe GameManager do
 
   describe '#away_goals_with_team_id' do
     it 'can create a hash with away team id as key and away goals has value' do
-      expect(@game_manager.away_goals_with_team_id).to eq({3=>1, 6=>4, 5=>0, 17=>1, 16=>3, 9=>4, 8=>2, 30=>1, 26=>1, 19=>0})
+      expect(@game_manager.away_goals_with_team_id).to eq({3=>5.0, 6=>12.0, 5=>1.0, 17=>5.0, 16=>8.0, 9=>7.0, 8=>3.0, 30=>4.0, 26=>2.0, 19=>0.0})
     end
   end
 
   describe '#home_goals_with_team_id' do
     it 'can create a hash with home team id as key and home goals has value' do
-      expect(@game_manager.home_goals_with_team_id).to eq({6=>1, 3=>2, 5=>1, 16=>3, 17=>3, 8=>1, 9=>3, 30=>0, 19=>2, 26=>1})
+      expect(@game_manager.home_goals_with_team_id).to eq({6=>12.0, 3=>3.0, 5=>1.0, 16=>15.0, 17=>8.0, 8=>6.0, 9=>7.0, 30=>3.0, 19=>4.0, 26=>1.0})
+    end
+  end
+
+  describe '#visitor_average_total_scores' do
+    it 'can return a hash with visitor team id as key and their average score as value' do
+      expect(@game_manager.visitor_average_total_scores).to eq({3=>0.17, 6=>0.41, 5=>0.03, 17=>0.17, 16=>0.28, 9=>0.24, 8=>0.1, 30=>0.14, 26=>0.07, 19=>0.0})
     end
   end
 end
