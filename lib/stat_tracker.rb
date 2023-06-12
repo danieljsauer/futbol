@@ -1,20 +1,29 @@
+require 'csv'
+# require_relative './game'
+# require_relative './league'
+# require_relative './season'
+require_relative './game_manager'
+require_relative './season_manager'
+require_relative './league_manager'
 class StatTracker
-  attr_reader :game,
+  attr_reader :game_manager,
+              :league_manager,
+              :season_manager,
+              :game,
               :league,
               :season
+              
 
   def initialize(locations)
     create_managers(locations)
   end
 
   def self.from_csv(locations)
-    @stat_tracker = StatTracker.new(@locations)
+    StatTracker.new(locations)
   end
 
   def create_managers(locations)
     @game_manager = GameManager.new(locations[:games], self)
-    @league_manager = LeagueManager.new(locations[:teams], self)
-    @season_manager = SeasonManager.new(locations[:game_teams], self)
   end
 
   # Game Manager Methods

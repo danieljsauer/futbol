@@ -1,3 +1,4 @@
+require_relative './season'
 class SeasonManager
   attr_reader :seasons,
               :season_path,
@@ -14,9 +15,5 @@ class SeasonManager
     @seasons = data.map do |seas|
       Season.new(seas)
     end
-  end
-
-  def best_coach
-    
   end
 end
