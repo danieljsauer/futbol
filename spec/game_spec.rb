@@ -14,7 +14,7 @@ RSpec.describe Game do
 
   describe '#initialize' do
     it '#exists' do
-      expect(@game).to be_a (Game)
+      expect(@game).to be_a(Game)
     end
 
     it 'has attributes' do
@@ -25,5 +25,9 @@ RSpec.describe Game do
       expect(@game.away_goals).to eq(0)
       expect(@game.home_goals).to eq(3)
     end
+
+    it "can add the total score" do 
+      expect(@game.total_score).to eq(3)
+    end 
   end
 end
