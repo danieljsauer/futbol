@@ -20,6 +20,25 @@ RSpec.describe GameManager do
     end
   end
 
+  describe '#create_games' do
+    it 'can parse CSV files and creates Game objects' do
+      game_path = './fixtures/games.csv'
+
+      # Stub 
+      csv_data = [
+        { game_id: '1', season: '20192020', away_team_id: '1', home_team_id: '2', away_goals: '3', home_goals: '2' },
+        { game_id: '2', season: '20192020', away_team_id: '3', home_team_id: '4', away_goals: '1', home_goals: '0' },
+        { game_id: '3', season: '20202021', away_team_id: '1', home_team_id: '4', away_goals: '2', home_goals: '2' }
+      ]
+      allow(CSV).to receive(:parse).and_return(csv_data)
+
+      @game_manager.create_games(game_path)
+
+      expect(@game_manager.count_of_games_by_season).to eq({"20192020"=>2, "20202021"=>1})
+      expect(@game_manager.average_goals_per_game).to eq({2=>5.0, 4=>2.5})
+    end
+  end
+
   describe '#highest_total_score' do
     it 'can return highest total score of all games' do
       expect(@game_manager.highest_total_score).to be_a(Integer)
