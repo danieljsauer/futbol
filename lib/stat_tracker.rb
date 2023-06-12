@@ -121,6 +121,18 @@ class StatTracker
     @game_manager.visitor_average_total_scores
   end
 
+  def total_away_games(team_id)
+    @game_manager.total_away_games(team_id)
+  end
+
+  def home_average_total_scores
+    @game_manager.home_average_total_scores
+  end
+
+  def total_home_games(team_id)
+    @game_manager.total_home_games
+  end
+
   # League Manager Methods
 
   def count_of_teams
