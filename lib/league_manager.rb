@@ -1,3 +1,4 @@
+require_relative './league'
 class LeagueManager
   attr_reader :team_path,
               :stat_tracker
