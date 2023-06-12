@@ -62,14 +62,14 @@ class GameManager
   
   # -------Helper Methods-------
   
-  # ---method needs to be renamed----
-  # def average_goals_per_game
-  #   hash = Hash.new
-  #   total_scores_per_team.each do |team_id, goals|
-  #     hash[team_id] = (goals.to_f / games_played(team_id)).round(2)
-  #   end
-  #   hash
-  # end
+
+  def goals_per_game_by_team_id
+    hash = Hash.new
+    total_scores_per_team.each do |team_id, goals|
+      hash[team_id] = (goals.to_f / games_played(team_id)).round(2)
+    end
+    hash
+  end
 
   def total_score
     @games.sum do |game|

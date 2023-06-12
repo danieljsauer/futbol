@@ -56,8 +56,8 @@ class StatTracker
     @game_manager.average_goals_per_game
   end
 
-  def average_goals_per_game
-    @game_manager.average_goals_per_game
+  def goals_per_game_by_team_id
+    @game_manager.goals_per_game_by_team_id
   end
 
   def average_goals_by_season
