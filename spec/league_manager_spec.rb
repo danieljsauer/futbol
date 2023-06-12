@@ -46,6 +46,12 @@ RSpec.describe LeagueManager do
       expect(@league_manager.highest_scoring_visitor).to eq("FC Dallas")
     end
   end
+
+  describe '#lowest_scoring_visitor' do
+    it 'can name of the team with the lowest average score per game across all seasons when they are away.' do
+      expect(@league_manager.lowest_scoring_visitor).to eq("Philadelphia Union")
+    end
+  end
   
  # helper methods
   describe '#most_wins_team_id' do
