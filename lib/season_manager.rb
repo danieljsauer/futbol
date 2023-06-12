@@ -1,3 +1,4 @@
+require_relative './season'
 class SeasonManager
   attr_reader :seasons,
               :season_path,

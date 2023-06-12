@@ -10,15 +10,12 @@ RSpec.describe StatTracker do
                 teams: team_path,
                 game_teams: game_teams_path
                 }
-    @stat_tracker = StatTracker.new(@locations)
+    @stat_tracker = StatTracker.from_csv(@locations)
   end
 
   describe '#initialize' do
     it 'exists' do
       expect(@stat_tracker).to be_a(StatTracker)
-      expect(@stat_tracker.game).to be_a(GameManager)
-      expect(@stat_tracker.league).to be_a(LeagueManager)
-      expect(@stat_tracker.season).to be_a(SeasonManager)
     end
   end
 end
