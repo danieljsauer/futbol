@@ -35,7 +35,7 @@ RSpec.describe GameManager do
       @game_manager.create_games(game_path)
 
       expect(@game_manager.count_of_games_by_season).to eq({"20192020"=>2, "20202021"=>1})
-      expect(@game_manager.average_goals_per_game).to eq({2=>5.0, 4=>2.5})
+      expect(@game_manager.average_goals_per_game).to eq(3.33)
     end
   end
 
