@@ -24,8 +24,6 @@ class StatTracker
 
   def create_managers(locations)
     @game_manager = GameManager.new(locations[:games], self)
-    @league_manager = LeagueManager.new(locations[:teams], self)
-    @season_manager = SeasonManager.new(locations[:game_teams], self)
   end
 
   # Game Manager Methods
@@ -58,8 +56,8 @@ class StatTracker
     @game_manager.average_goals_per_game
   end
 
-  def average_goals_per_game
-    @game_manager.average_goals_per_game
+  def goals_per_game_by_team_id
+    @game_manager.goals_per_game_by_team_id
   end
 
   def average_goals_by_season

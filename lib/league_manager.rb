@@ -51,11 +51,11 @@ class LeagueManager
  # -------Helper Methods-------
  
   def most_wins_team_id
-    @stat_tracker.average_goals_per_game.max_by { |id, goals| goals }[0]
+    @stat_tracker.goals_per_game_by_team_id.max_by { |id, goals| goals }[0]
   end
 
   def most_losses_team_id
-    @stat_tracker.average_goals_per_game.min_by { |id, goals| goals }[0]
+    @stat_tracker.goals_per_game_by_team_id.min_by { |id, goals| goals }[0]
   end
 
   def find_team_id_with_name

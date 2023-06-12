@@ -85,12 +85,12 @@ RSpec.describe GameManager do
     end
   end
 
-  # describe '#average_goals_per_game' do
-  #   it 'can give the average goals per game for the season' do
-  #     expected = {6=>2.0, 3=>1.6, 5=>2.0, 16=>2.0, 17=>1.57, 8=>2.6, 9=>2.0, 30=>1.6, 19=>2.0, 26=>0.33}
-  #     expect(@game_manager.average_goals_per_game).to eq(expected)
-  #   end
-  # end
+  describe '#goals_per_game_by_team_id' do
+    it 'can give the average goals per game for the season' do
+      expected = {6=>2.0, 3=>1.6, 5=>2.0, 16=>2.0, 17=>1.57, 8=>2.6, 9=>2.0, 30=>1.6, 19=>2.0, 26=>0.33}
+      expect(@game_manager.goals_per_game_by_team_id).to eq(expected)
+    end
+  end
 
   describe '#average_goals_by_season' do
     it 'can return the average goals scored per season in a hash' do
