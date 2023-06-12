@@ -86,6 +86,12 @@ RSpec.describe GameManager do
     end
   end
 
+  describe '#total_home_games(team_id)' do
+    it 'can count the number of home games per team' do
+      expect(@game_manager.total_home_games(3)).to eq(2)
+    end
+  end
+
   describe '#home_wins' do
     it 'retruns a count of the total number of home team wins' do
       expect(@game_manager.home_wins).to eq(21.0)
@@ -175,6 +181,12 @@ RSpec.describe GameManager do
   describe '#visitor_average_total_scores' do
     it 'can return a hash with visitor team id as key and their average score as value' do
       expect(@game_manager.visitor_average_total_scores).to eq({3=>1.67, 6=>3.0, 5=>0.5, 17=>1.25, 16=>1.6, 9=>2.33, 8=>1.5, 30=>1.33, 26=>1.0, 19=>0.0})
+    end
+  end
+
+  describe '#home_average_total_scores' do
+    it 'can return a hash with home team id as key and their average score as value' do
+      expect(@game_manager.home_average_total_scores).to eq({6=>2.4, 3=>1.5, 5=>0.5, 16=>2.14, 17=>2.67, 8=>2.0, 9=>3.5, 30=>1.5, 19=>2.0, 26=>1.0})
     end
   end
 end
