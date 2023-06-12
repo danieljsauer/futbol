@@ -32,12 +32,23 @@ class LeagueManager
     find_team_id_with_name[goals[0]]
   end
 
+  def highest_scoring_home_team
+    goals = @stat_tracker.home_average_total_scores.max_by { |team_id, goals| goals }
+    find_team_id_with_name[goals[0]]
+  end
+
   def lowest_scoring_visitor
     goals = @stat_tracker.visitor_average_total_scores.min_by { |team_id, goals| goals }
     find_team_id_with_name[goals[0]]
   end
 
-  # helper methods
+  def lowest_scoring_home_team
+    goals = @stat_tracker.home_average_total_scores.min_by { |team_id, goals| goals }
+    find_team_id_with_name[goals[0]]
+  end
+
+ # -------Helper Methods-------
+ 
   def most_wins_team_id
     @stat_tracker.average_goals_per_game.max_by { |id, goals| goals }[0]
   end

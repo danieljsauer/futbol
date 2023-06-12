@@ -64,10 +64,22 @@ class GameManager
     avg_goals
   end
 
-# -------Helper Methods-------
-
+  # -------Helper Methods-------
+  
   def total_games
     @games.count
+  end
+  
+  def total_away_games(team_id)
+    away_team_id.find_all do |team| 
+      team == team_id
+    end.count
+  end
+  
+  def total_home_games(team_id)
+    home_team_id.find_all do |team| 
+      team == team_id
+    end.count
   end
 
   def home_wins
@@ -165,7 +177,15 @@ class GameManager
   def visitor_average_total_scores
     visitor_total_scores = Hash.new
     away_goals_with_team_id.each do |team_id, goals|
-      visitor_total_scores[team_id] = (goals / total_games).round(2)
+      visitor_total_scores[team_id] = (goals / total_away_games(team_id)).round(2)
+    end
+    visitor_total_scores 
+  end
+
+  def home_average_total_scores
+    visitor_total_scores = Hash.new
+    home_goals_with_team_id.each do |team_id, goals|
+      visitor_total_scores[team_id] = (goals / total_home_games(team_id)).round(2)
     end
     visitor_total_scores 
   end

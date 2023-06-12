@@ -20,6 +20,29 @@ RSpec.describe LeagueManager do
     end
   end
 
+  describe '#create_league' do
+    it 'can parse CSV files and creates League objects' do
+      team_path = './fixtures/teams.csv'
+
+      # Stub 
+      csv_data = [
+        { team_id: '1', teamname: 'Team A' },
+        { team_id: '2', teamname: 'Team B' },
+        { team_id: '3', teamname: 'Team C' }
+      ]
+      allow(CSV).to receive(:parse).and_return(csv_data)
+
+      @league_manager.create_league(team_path)
+
+      expect(@league_manager.count_of_teams).to eq(3)
+      expect(@league_manager.find_team_id_with_name).to eq({
+        1 => 'Team A',
+        2 => 'Team B',
+        3 => 'Team C'
+      })
+    end
+  end
+
   describe '#count_of_teams' do
     it 'can count total number of teams in the data' do
       expect(@league_manager.count_of_teams).to be_a(Integer)
@@ -42,8 +65,14 @@ RSpec.describe LeagueManager do
   end
 
   describe '#highest_scoring_visitor' do
-    it 'can name of the team with the highest average score per game across all seasons when they are away.' do
+    it 'can name of the away team with the highest average score per game across all seasons when they are away.' do
       expect(@league_manager.highest_scoring_visitor).to eq("FC Dallas")
+    end
+  end
+
+  describe '#highest_scoring_home_team' do
+    it 'can name of the home team with the highest average score per game across all seasons when they are away.' do
+      expect(@league_manager.highest_scoring_home_team).to eq("New York City FC")
     end
   end
 
@@ -53,7 +82,14 @@ RSpec.describe LeagueManager do
     end
   end
   
- # helper methods
+  describe '#lowest_scoring_home_team' do
+    it 'can name of the home team with the lowest average score per game across all seasons when they are away.' do
+      expect(@league_manager.lowest_scoring_home_team).to eq("Sporting Kansas City")
+    end
+  end
+
+# ------Helper Method Tests-------
+
   describe '#most_wins_team_id' do
     it 'can track the most wins by id' do
       expect(@league_manager.most_wins_team_id).to be_a(Integer)
